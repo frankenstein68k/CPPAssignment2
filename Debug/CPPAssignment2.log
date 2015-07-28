@@ -1,0 +1,11 @@
+﻿Build started 7/28/2015 12:15:37 AM.
+     1>Project "C:\Users\tomSec\Documents\Visual Studio 2013\Projects\CPPAssignment2\CPPAssignment2.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
+         Source.cpp
+     1>c:\users\tomsec\documents\visual studio 2013\projects\cppassignment2\user.h(11): error C2332: 'struct' : missing tag name
+     1>Done Building Project "C:\Users\tomSec\Documents\Visual Studio 2013\Projects\CPPAssignment2\CPPAssignment2.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.51
