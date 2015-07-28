@@ -1,18 +1,18 @@
+//Specification file for the User class
 #ifndef USER_H
 #define USER_H
 
 class User
 {
 public:
-	User();
-	~User();
+	User();//Constructor
+	//User(char, char, char, int); //Constructor
+	~User(); //Decoonstructor
 
 	bool checkIfUserExists(char);
 	void updateUser(struct temp);
 	void deleteUser();
 	void setHighScore();
-
-
 
 private:
 	struct user{
@@ -23,11 +23,3 @@ private:
 	};
 };
 #endif
-
-User::User()
-{
-}
-
-User::~User()
-{
-}
