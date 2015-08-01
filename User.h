@@ -9,7 +9,6 @@ public:
 	//User(char, char, char, int); //Constructor
 	~User(); //Decoonstructor
 
-	//COOL STUFF GOES HERE
 
 	bool checkIfUserExists(char);
 	void updateUser(struct temp);
