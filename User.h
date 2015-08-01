@@ -1,25 +1,28 @@
 //Specification file for the User class
-#ifndef USER_H
-#define USER_H
+
 
 class User
 {
 public:
 	User();//Constructor
-	//User(char, char, char, int); //Constructor
-	~User(); //Decoonstructor
+	User(std::string, std::string, std::string, int); //Constructor
+	~User(); //Deconstructor
 
-	bool checkIfUserExists(char);
-	void updateUser(struct temp);
+	bool checkIfUserExists(std::string);
+	void login();
+	void updateUser();
 	void deleteUser();
 	void setHighScore();
 
 private:
-	struct user{
-		char userName[20];
-		char country[20];
-		char gender[10];
-		int age;
+	struct userInfo{
+	private:
+		userInfo();
+	public:
+		userInfo(std::string userNamex, std::string countryx, std::string genderx, unsigned int agex);
+		std::string userName;
+		std::string country;
+		std::string gender;
+		unsigned int age;
 	};
 };
-#endif

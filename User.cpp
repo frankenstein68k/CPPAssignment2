@@ -1,15 +1,45 @@
 //Implementation file for User class
+#include <iostream> //For files
+#include <cctype> //For character handling
 #include "User.h"
 
+User::User(){};
+User::userInfo::userInfo(){};
+
 //Constructor
-//User::User(char userNamex, char countryx, char genderx, int agex){
-//	//user.age = agex;
-//}
+User::userInfo::userInfo(const std::string userNamex, const std::string countryx, const std::string genderx, const unsigned int agex) : userName(userNamex), country(countryx), gender(genderx), age(agex)
+{
+	userInfo::age = agex;
+	userInfo::country = countryx;
+	userInfo::gender = genderx;
+	userInfo::age = agex;
 
-//User::User(){
-//}
+};
 
-bool checkIfUserExists(char);
-void updateUser(struct temp);
-void deleteUser();
-void setHighScore();
+void User::login(){
+
+
+
+};
+
+bool User::checkIfUserExists(std::string){
+
+	return false;
+
+};
+
+void User::updateUser(){
+
+
+
+};
+void User::deleteUser(){
+
+
+
+};
+void User::setHighScore(){
+
+
+
+};
