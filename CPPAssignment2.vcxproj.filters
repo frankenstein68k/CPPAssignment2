@@ -24,9 +24,15 @@
     <ClCompile Include="dummy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="HighScoreManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="User.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HighScoreManager.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
