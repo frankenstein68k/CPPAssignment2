@@ -13,3 +13,5 @@ bool checkIfUserExists(char);
 void updateUser(struct temp);
 void deleteUser();
 void setHighScore();
+
+//IT'S THURSDAY AND I'M JUST CHECKING IN ON YA!!!

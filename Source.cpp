@@ -6,7 +6,7 @@
 using namespace std;
 
 //COMP 2006 - C++ Assignment 2
-//Neil MacKenzie (Monday section) / Nick Kuznecov (Tuesday section)
+//Neil MacKenzie (Monday section) / Nick Kuznecov (Tuesday section) / Ol billy booze bag
 
 int main(){
 	int userResp;
