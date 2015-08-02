@@ -9,7 +9,8 @@
 //User::User(){
 //}
 
-bool checkIfUserExists(char);
+void loginUser();
+bool checkIfUserExists(char[]);
 void updateUser(struct temp);
 void deleteUser();
 void setHighScore();

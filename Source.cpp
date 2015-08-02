@@ -39,8 +39,46 @@ int main(){
 
 	//Calls to user functions
 	if (userResp = 1){
-		//check if user exist
-		//login
+
+		char getUserName[20];
+		char country[20];
+		char gender[10];
+		int age;
+
+		cout << "Please enter your username - No spaces" << endl;
+		cin >> getUserName;
+		//if (checkIfUserExists(getUserName)){
+		//	
+		//	//loginUser(getUserName);
+		//}
+	/*	else
+		{*/
+			cout << "No user found by that name" << endl << endl;
+			cout << "Would you like to: " << endl;
+			cout << "1. Create a new user" << endl;
+			cout << "2. Exit" << endl;
+			cin >> userResp;
+			//User validation
+			while (userResp != 1 && userResp != 2){
+				cout << "Please choose 1 or 2" << endl;
+				cin >> userResp;
+			}
+			if (userResp == 1){
+				cout << "Please enter information below where necessary" << endl;
+				cout << "Username: " << getUserName << endl;
+				cout << "Country: ";
+				cin >> country;
+				cout << "Gender: ";
+				cin >> gender;
+				cout << "Age: ";
+				cin >> age;
+				//User new1(getUserName, country, gender, age);
+
+				cout << "New user created" << endl;
+			}
+
+		//}
+
 	}
 	else if (userResp = 2){
 		//Updateuserlist
