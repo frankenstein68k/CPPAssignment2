@@ -1,5 +1,6 @@
 //Implementation file for User class
 #include "User.h"
+using namespace std;
 
 //Constructor
 //User::User(char userNamex, char countryx, char genderx, int agex){
