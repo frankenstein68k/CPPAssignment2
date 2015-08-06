@@ -8,21 +8,53 @@ using namespace std;
 //COMP 2006 - C++ Assignment 2
 //Neil MacKenzie (Monday section) / Nick Kuznecov (Tuesday section)
 
+void userClassFunctions();
+void highScoreFunctions();
+
 int main(){
 	int userResp;
-	cout << "Welcome to the High Score Keeper App" << endl;
-	cout << "1. Do you want to create, view or edit user information?" << endl;
-	cout << "2. Do you want to view or edit the High score?" << endl;
-	cin >> userResp;
-	//User validation
-	while (userResp != 1 && userResp != 2){
-		cout << "Please choose 1 or 2" << endl;
+	do{
+		cout << "Welcome to the High Score Keeper App" << endl;
+		cout << "1. Do you want to create, view or edit user information?" << endl;
+		cout << "2. Do you want to view or edit the High score?" << endl;
+		cout << "3. Exit program" << endl;
 		cin >> userResp;
-	}
-	//User confirmation
-	cout << "you have chosen " << userResp << endl;
+		//User validation
+		while (userResp != 1 && userResp != 2 && userResp != 3){
+			cout << "Please choose 1 or 2 or 3" << endl;
+			cin >> userResp;
+		}
 
+		//User confirmation
+		cout << "you have chosen " << userResp << endl;
+
+		if (userResp == 1){
+			userClassFunctions();
+		}
+
+		else if (userResp == 2){
+			highScoreFunctions();
+		}
+
+
+
+	} while (userResp != 3);
+
+
+
+	
+
+	
+
+	system("PAUSE");
+	return 0;
+}
+
+void userClassFunctions(){
+	int userResp;
+	cout << "Neil's work" << endl;
 	//User class functions
+	cout << endl << endl;
 	cout << "User information Section" << endl;
 	cout << "1. Login/Create new user" << endl;
 	cout << "2. Update/edit user" << endl;
@@ -51,31 +83,31 @@ int main(){
 		//	
 		//	//loginUser(getUserName);
 		//}
-	/*	else
+		/*	else
 		{*/
-			cout << "No user found by that name" << endl << endl;
-			cout << "Would you like to: " << endl;
-			cout << "1. Create a new user" << endl;
-			cout << "2. Exit" << endl;
+		cout << "No user found by that name" << endl << endl;
+		cout << "Would you like to: " << endl;
+		cout << "1. Create a new user" << endl;
+		cout << "2. Exit" << endl;
+		cin >> userResp;
+		//User validation
+		while (userResp != 1 && userResp != 2){
+			cout << "Please choose 1 or 2" << endl;
 			cin >> userResp;
-			//User validation
-			while (userResp != 1 && userResp != 2){
-				cout << "Please choose 1 or 2" << endl;
-				cin >> userResp;
-			}
-			if (userResp == 1){
-				cout << "Please enter information below where necessary" << endl;
-				cout << "Username: " << getUserName << endl;
-				cout << "Country: ";
-				cin >> country;
-				cout << "Gender: ";
-				cin >> gender;
-				cout << "Age: ";
-				cin >> age;
-				//User new1(getUserName, country, gender, age);
+		}
+		if (userResp == 1){
+			cout << "Please enter information below where necessary" << endl;
+			cout << "Username: " << getUserName << endl;
+			cout << "Country: ";
+			cin >> country;
+			cout << "Gender: ";
+			cin >> gender;
+			cout << "Age: ";
+			cin >> age;
+			//User new1(getUserName, country, gender, age);
 
-				cout << "New user created" << endl;
-			}
+			cout << "New user created" << endl;
+		}
 
 		//}
 
@@ -89,7 +121,7 @@ int main(){
 	else if (userResp = 4){
 		//setHighScore
 	}
-
-	system("PAUSE");
-	return 0;
+}
+void highScoreFunctions(){
+	cout << "Nick's work" << endl;
 }
