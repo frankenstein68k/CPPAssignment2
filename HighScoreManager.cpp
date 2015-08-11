@@ -5,8 +5,6 @@ using namespace std;
 
 HighScoreManager::HighScoreManager(){};
 HighScoreManager::~HighScoreManager(){
-
-
 };
 HighScoreManager::highScoreInfo::highScoreInfo(){};
 

@@ -1,6 +1,9 @@
 //Specification file for the User class
 #ifndef USER_H
 #define USER_H
+#include <iostream> //For files
+#include <fstream>
+#include <cctype> //For character handling
 
 class User
 {
@@ -14,13 +17,12 @@ public:
 	void updateUser(struct temp);
 	void deleteUser();
 	void setHighScore();
+	void printUserName();
 
 private:
-	struct user{
 		char userName[20];
 		char country[20];
 		char gender[10];
 		int age;
-	};
 };
 #endif
