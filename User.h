@@ -9,7 +9,7 @@ class User
 {
 public:
 	User();//Constructor
-	User(char);
+	User(char[]);
 	//User(char, char, char, int); //Constructor
 	~User(); //Decoonstructor
 
@@ -19,6 +19,7 @@ public:
 	void deleteUser();
 	void setHighScore();
 	void printUserName();
+	char* getUserName();
 
 private:
 		char *userName;

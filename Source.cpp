@@ -28,10 +28,13 @@ int main(){
 
 	cout << "\nYou have entered " << userName << endl << endl;
 
-	cout << "about to call constructor" << endl;
-	User newObj('hfg');
-	newObj.printUserName();;
-	cout << "Constructor called " << endl;
+	/*cout << "about to call constructor" << endl;
+	User newObj(userName);
+	newObj.printUserName();
+	cout << newObj.getUserName() << endl;
+	cout << "Constructor called " << endl;*/
+
+	User newUser(userName);
 
 
 	//while (userResp == 1 || userResp == 2)

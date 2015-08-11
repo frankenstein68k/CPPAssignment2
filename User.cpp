@@ -3,16 +3,17 @@
 //#include <iostream>
 
 using namespace std;
+
 //Constructor
 User::User(){
 	cout << "New User created" << endl;
 
 };
-
-User::User(char uName){
+//Overloaded constructor
+User::User(char uName[]){
 	cout << "Overloading constructor" << endl;
-	//userName = uName;
-	userName = "Neil";
+	cout << uName << endl;
+	userName = uName;
 	country = "Undefind";
 	gender = "Undefined";
 	age = 18;
@@ -20,22 +21,17 @@ User::User(char uName){
 //Deconstructor
 User::~User(){};
 
-//User::User(char userNamex, char countryx, char genderx, int agex){
-//	//user.age = agex;
-//}
-
 
 //bool checkIfUserExists(char);
 //void updateUser(struct temp);
 //void deleteUser();
 //void setHighScore();
-//void printUserName();
 
-//private:
-//	char userName[20];
-//	char country[20];
-//	char gender[10];
-//	int age;
+char* User::getUserName(){
+	cout << "getUserName function " << endl;
+	char* str = userName;
+	return str;
+}
 
 void User::printUserName(){
 	cout << "USERNAME GOES HERE" << endl;
