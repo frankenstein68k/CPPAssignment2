@@ -6,8 +6,6 @@ using namespace std;
 
 //Constructor
 User::User(){
-	cout << "New User created" << endl;
-
 };
 //Overloaded constructor
 User::User(char uName[]){
@@ -22,8 +20,35 @@ User::User(char uName[]){
 User::~User(){};
 
 
-//bool checkIfUserExists(char);
-//void updateUser(struct temp);
+bool User::checkIfUserExists(){
+	cout << "checkIfUserExist function" << endl;
+	return false;
+};
+void User::updateUser(){
+	char nCountry[25];
+	char nGender[25];
+	int nAge;
+
+	cout << "Country? (no spaces): ";
+	cin >> nCountry;
+	cout << "Gender?: ";
+	cin >> nGender;
+	cout << "Age?: ";
+	cin >> nAge;
+
+
+	//Hard coding to prove that I can put string/char arrays and it will work
+	country = "estonia";
+	gender = "male";
+	age = nAge;
+
+	//trouble bad data in country and data doing it this way
+	
+	/*country = nCountry;
+	gender = nGender;
+	age = nAge;*/
+
+};
 //void deleteUser();
 //void setHighScore();
 
@@ -37,3 +62,23 @@ void User::printUserName(){
 	cout << "USERNAME GOES HERE" << endl;
 	cout << userName << endl;
 }
+
+void User::setCountry(char uCountry[]){
+	country = uCountry;
+}
+
+void User::setGender(char uGender[]){
+	gender = uGender;
+}
+
+void User::setAge(int uAge){
+	age = uAge;
+}
+
+void User::printUserinfo(){
+	cout << "\tUSER INFORMATION" << endl;
+	cout << "Username: " << userName << endl;
+	cout << "Country: " << country << endl;
+	cout << "Gender: " << gender << endl;
+	cout << "Age: " << age << endl;
+ }

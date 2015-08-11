@@ -35,6 +35,29 @@ int main(){
 	cout << "Constructor called " << endl;*/
 
 	User newUser(userName);
+	newUser.checkIfUserExists();
+
+	if (newUser.checkIfUserExists()){
+		cout << "User exists" << endl;
+	}
+	else{
+		/*char nCountry[25];
+		char nGender[25];
+		int nAge;*/
+		cout << "User doesn't exist" << endl;
+		cout << "Please enter all the information to create a complete user profile" << endl;
+		newUser.updateUser();
+	/*	cout << "Country? (no spaces): ";
+		cin >> nCountry;
+		cout << "Gender?: ";
+		cin >> nGender;
+		cout << "Age?: ";
+		cin >> nAge;
+		newUser.setCountry(nCountry);
+		newUser.setGender(nGender);
+		newUser.setAge(nAge);*/
+		newUser.printUserinfo();
+	}
 
 
 	//while (userResp == 1 || userResp == 2)

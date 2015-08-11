@@ -14,12 +14,16 @@ public:
 	~User(); //Decoonstructor
 
 
-	bool checkIfUserExists(char);
-	void updateUser(struct temp);
+	bool checkIfUserExists();
+	void updateUser();
 	void deleteUser();
 	void setHighScore();
 	void printUserName();
 	char* getUserName();
+	void setCountry(char[]);
+	void setGender(char[]);
+	void setAge(int);
+	void printUserinfo();
 
 private:
 		char *userName;
