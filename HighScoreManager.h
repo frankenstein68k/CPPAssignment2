@@ -1,7 +1,12 @@
 //Specification file for the HighScoreManager class
 #include <iostream> //For files
 #include <fstream>
-#include <cctype> //For character handling 
+#include <cctype> //For character handling
+#include <string>
+#include <chrono>
+#include <vector>
+#include <algorithm>
+#include <iomanip>
 
 class HighScoreManager
 {
@@ -14,11 +19,12 @@ public:
 	void updateHighScore();
 	void printHighScore();
 
+
 private:
 	struct highScoreInfo{
 	private:
-		highScoreInfo();
 	public:
+		highScoreInfo();
 		highScoreInfo(std::string userNamex, std::string datex, unsigned int scorex);
 		std::string userName;
 		std::string date;
