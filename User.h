@@ -9,6 +9,7 @@ class User
 {
 public:
 	User();//Constructor
+	User(char);
 	//User(char, char, char, int); //Constructor
 	~User(); //Decoonstructor
 
@@ -20,9 +21,9 @@ public:
 	void printUserName();
 
 private:
-		char userName[20];
-		char country[20];
-		char gender[10];
+		char *userName;
+		char *country;
+		char *gender;
 		int age;
 };
 #endif

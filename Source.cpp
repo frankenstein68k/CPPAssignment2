@@ -29,7 +29,7 @@ int main(){
 	cout << "\nYou have entered " << userName << endl << endl;
 
 	cout << "about to call constructor" << endl;
-	User newObj;
+	User newObj('hfg');
 	newObj.printUserName();;
 	cout << "Constructor called " << endl;
 
