@@ -15,12 +15,13 @@ public:
 	void updateUser(struct temp);
 	void deleteUser();
 	void setHighScore();
+	void pukeInfo();
 
 private:
 
-	char userName[20];
-	char country[20];
-	char gender[10];
+	char *userName;
+	char *country;
+	char *gender;
 	int age;
 
 };

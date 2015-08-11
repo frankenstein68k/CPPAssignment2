@@ -26,6 +26,8 @@ int main(){
 
 	cout << "\nYou have entered " << userName << endl << endl;
 
+	User player1();
+
 	//if ()
 
 	do{
