@@ -6,7 +6,8 @@ class User
 {
 public:
 	User();//Constructor
-	User(char[], char[], char[], int); //Constructor
+	//User(char[], char[], char[], int); //Constructor
+	//User(char[]);
 	~User(); //Decoonstructor
 
 	void loginUser();

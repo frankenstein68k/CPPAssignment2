@@ -1,7 +1,9 @@
 #include <iostream> //For files
 #include <cctype> //For character handling
 #include "User.h" //For User class
-#include "User.cpp" //For User class
+//#include "User.cpp" //For User class
+#include <fstream>
+#include <iostream>
 
 using namespace std;
 
@@ -13,29 +15,42 @@ void highScoreFunctions();
 void loginCreateNewUser();
 
 int main(){
-	int userResp;
+	int userResp =3;
+	char userName[20];
+
+
+	cout << "Welcome to the High Score Keeper App" << endl;
+	cout << "\n\tIf you are a new user enter username you would like (no spaces)";
+	cout << "\n\tPlease enter your Username(no spaces): ";
+	cin >> userName;
+
+	cout << "\nYou have entered " << userName << endl << endl;
+
+	//if ()
+
 	do{
-		cout << "Welcome to the High Score Keeper App" << endl;
-		cout << "1. Do you want to create, view or edit user information?" << endl;
-		cout << "2. Do you want to view or edit the High score?" << endl;
-		cout << "3. Exit program" << endl;
-		cin >> userResp;
-		//User validation
-		while (userResp != 1 && userResp != 2 && userResp != 3){
-			cout << "Please choose 1 or 2 or 3" << endl;
-			cin >> userResp;
-		}
+		//cout << "Welcome to the High Score Keeper App" << endl;
+		//cout << "1. Do you want to create, view or edit user information?" << endl;
+		//cout << "2. Do you want to view or edit the High score?" << endl;
+		//cout << "3. Exit program" << endl;
+		//cin >> userResp;
+		////User validation
+		//while (userResp != 1 && userResp != 2 && userResp != 3){
+		//	cout << "Please choose 1 or 2 or 3" << endl;
+		//	cin >> userResp;
+		//}
 
-		//User confirmation
-		cout << "you have chosen " << userResp << endl;
+		////User confirmation
+		//cout << "you have chosen " << userResp << endl;
 
-		if (userResp == 1){
-			userClassFunctions();
-		}
+		//if (userResp == 1){
+		//	userClassFunctions();
+		//}
 
-		else if (userResp == 2){
-			highScoreFunctions();
-		}
+		//else if (userResp == 2){
+		//	highScoreFunctions();
+		//}
+
 
 
 

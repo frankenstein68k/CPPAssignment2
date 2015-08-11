@@ -2,13 +2,13 @@
 #include "User.h"
 using namespace std;
 
-//Constructor
+//Constructors
 //User::User(char userNamex, char countryx, char genderx, int agex){
 //	//user.age = agex;
 //}
 
-//User::User(){
-//}
+User::User(){
+};
 
 void loginUser();
 bool checkIfUserExists(char[]);
