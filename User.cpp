@@ -13,6 +13,9 @@ User::User(char uName){
 	cout << "Overloading constructor" << endl;
 	//userName = uName;
 	userName = "Neil";
+	country = "Undefind";
+	gender = "Undefined";
+	age = 18;
 };
 //Deconstructor
 User::~User(){};
