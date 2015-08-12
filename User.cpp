@@ -195,6 +195,12 @@ void User::deleteUser(int lineNo, std::string UserName)
 	cout << "Are you sure you want to delete your profile? (yes/no)" << endl;
 	cin >> userDelete;
 
+	while (userDelete != "Yes" && userDelete != "yes" && userDelete != "no" && userDelete != "No"){
+		cout << "Please either type Yes or No" << endl;
+		cin >> userDelete;
+	};
+
+	
 	if (userDelete == "Yes" || userDelete == "yes")
 	{
 
