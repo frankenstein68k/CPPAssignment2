@@ -15,7 +15,7 @@ public:
 	HighScoreManager(char, char, int); //Constructor
 	~HighScoreManager(); //Deconstructor
 
-	void createHighScore();
+	void createHighScore(std::string);
 	void updateHighScore();
 	void printHighScore();
 

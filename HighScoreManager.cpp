@@ -23,7 +23,7 @@ HighScoreManager::highScoreInfo::highScoreInfo(const std::string userNamex, cons
 ///////////THIS FUNCTION ALLOWS THE USER TO ADD HIGH SCORES TO THE LEADERBOARD///////////
 /////////////////////////////////////////////////////////////////////////////////////////
 
-void HighScoreManager::createHighScore()
+void HighScoreManager::createHighScore(std::string UserName)
 {
 	ofstream outfile;
 	ifstream infile;
@@ -57,7 +57,7 @@ void HighScoreManager::createHighScore()
 
 	//NEIL REPLACE THE PLACEHOLDERUSER WITH THE CURRENT USER VVV!!!!!
 
-	outfile << userHighScoreInfo.score << " " << "PlaceholderUser" << "," << userHighScoreInfo.date << endl;
+	outfile << userHighScoreInfo.score << " " << UserName << "," << userHighScoreInfo.date << endl;
 
 	updateHighScore();
 
@@ -118,8 +118,6 @@ void HighScoreManager::updateHighScore()
 	{
 		outfile << highScoreArray[i].score << highScoreArray[i].userName << "," << highScoreArray[i].date << endl;
 	}
-
-	system("pause");
 
 };
 
