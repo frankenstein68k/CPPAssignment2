@@ -28,7 +28,7 @@ int main(){
 
 	user.login();
 
-	//Allows you to go back and login as different users
+	//Allows you to go back and login as different users after deleted your current user
 	do{
 	cout << "You are about to exit" << endl;
 	cout << "Type the letter L if you would like to login again" << endl;
