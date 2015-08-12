@@ -10,8 +10,8 @@ using namespace std;
 //COMP 2006 - C++ Assignment 2
 //Neil MacKenzie (Monday section) / Nick Kuznecov (Tuesday section)
 
-int displayMainMenu();
-void displayChoice(string&);
+//int displayMainMenu();
+//void displayChoice(string&);
 
 int main(){
 
@@ -31,20 +31,25 @@ int main(){
 	return 0;
 };
 
-int displayMainMenu()
-{
-	int userResp;
+//int displayMainMenu()
+//{
+//	int userResp;
+//
+//	cout << "Welcome to the High Score Keeper App" << endl;
+//	cout << "1. Do you want to create, view or edit user information?" << endl;
+//	cout << "2. Do you want to view or edit the High score?" << endl;
+//	cout << "3. Would you like to exit the program?" << endl;
+//	cin >> userResp;
+//	while (userResp != 1 && userResp != 2 && userResp != 3){
+//		cout << "Please enter type a number between and including 1 and 3" << endl;
+//		cin >> userResp;
+//	}
+//	cout << endl;
+//
+//	return userResp;
+//}
 
-	cout << "Welcome to the High Score Keeper App" << endl;
-	cout << "1. Do you want to create, view or edit user information?" << endl;
-	cout << "2. Do you want to view or edit the High score?" << endl;
-	cin >> userResp;
-	cout << endl;
-
-	return userResp;
-}
-
-void displayChoice(string& option)
-{
-	cout << "You have chosen to " << option << endl << endl;
-}
+//void displayChoice(string& option)
+//{
+//	cout << "You have chosen to " << option << endl << endl;
+//}

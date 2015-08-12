@@ -44,50 +44,63 @@ void User::login()
 
 	User::checkIfUserExists(lineNo, UserInfo.userName);
 
-	//User class functions
-	cout << endl;
-	cout << "\n\tUser information Section" << endl;
-	cout << "\n\t1. Update/edit user" << endl;
-	cout << "\n\t2. Delete user" << endl;
-	cout << "\n\t3. High Score Manager" << endl;
-	cin >> userResp;
-	
-	//User validation
-	while (userResp < 1 || userResp > 4){
-		cout << "Please choose a number between 1-4" << endl;
-		cin >> userResp;
-	}
-
-	system("CLS");
-
-	//Calls to user functions
-	if (userResp == 1)
-	{
-		User::updateUser(lineNo, UserInfo.userName);
-	}
-	else if (userResp == 2)
-	{
-		User::deleteUser(lineNo, UserInfo.userName);
-	}
-	else if (userResp == 3)
-	{		
+	do{
 		//User class functions
-		cout << "\n\tHigh Score Manager" << endl;
-		cout << "\n\t1. Create high score" << endl;
-		cout << "\n\t2. Print high score" << endl;
+		cout << endl;
+		cout << "\n\tUser information Section" << endl;
+		cout << "\n\t1. Update/edit user" << endl;
+		cout << "\n\t2. Delete user" << endl;
+		cout << "\n\t3. High Score Manager" << endl;
+		cout << "\n\t4. Exit Program" << endl;
 		cin >> userResp;
 
+		//User validation
+		while (userResp < 1 || userResp > 4){
+			cout << "Please choose a number between 1-4" << endl;
+			cin >> userResp;
+		}
+
+		system("CLS");
+
+		//Calls to user functions
 		if (userResp == 1)
 		{
-				HighScoreManager HighScore;
-					HighScore.createHighScore(UserInfo.userName);
+			User::updateUser(lineNo, UserInfo.userName);
 		}
 		else if (userResp == 2)
 		{
-			HighScoreManager HighScore;
-				HighScore.printHighScore();
+			User::deleteUser(lineNo, UserInfo.userName);
 		}
-	}
+		else if (userResp == 3)
+		{
+			do{
+				system("CLS");
+				//User class functions
+				cout << "\n\tHigh Score Manager" << endl;
+				cout << "\n\t1. Create high score" << endl;
+				cout << "\n\t2. Print high score" << endl;
+				cout << "\n\t3. Exit to previous menu" << endl;
+				cin >> userResp;
+
+				//User validation
+				while (userResp < 1 || userResp > 3){
+					cout << "Please choose a number between 1-3" << endl;
+					cin >> userResp;
+				}
+
+				if (userResp == 1)
+				{
+					HighScoreManager HighScore;
+					HighScore.createHighScore(UserInfo.userName);
+				}
+				else if (userResp == 2)
+				{
+					HighScoreManager HighScore;
+					HighScore.printHighScore();
+				}
+			} while (userResp != 3);
+		}
+	} while (userResp != 4);
 }
 void User::checkIfUserExists(int lineNo, std::string UserName)
 {
