@@ -136,7 +136,7 @@ void HighScoreManager::printHighScore()
 	infile.open("highscore.dat");
 
 
-	cout << "Username			Score				Date" << endl;
+	cout << endl << "Username			Score				Date" << endl;
 
 	while (!infile.eof() && i < 10) 
 	{

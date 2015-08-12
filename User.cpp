@@ -5,10 +5,7 @@
 using namespace std;
 
 User::User(){};
-User::~User(){
-
-
-};
+User::~User(){};
 User::UserInfo::UserInfo(){};
 
 //Constructor
@@ -18,7 +15,6 @@ User::UserInfo::UserInfo(const std::string userNamex, const std::string countryx
 	UserInfo::country = countryx;
 	UserInfo::gender = genderx;
 	UserInfo::age = agex;
-
 };
 
 void User::login()
@@ -48,50 +44,67 @@ void User::login()
 
 	User::checkIfUserExists(lineNo, UserInfo.userName);
 
-	//User class functions
-	cout << endl;
-	cout << "\n\tUser information Section" << endl;
-	cout << "\n\t1. Update/edit user" << endl;
-	cout << "\n\t2. Delete user" << endl;
-	cout << "\n\t3. High Score Manager" << endl;
-	cin >> userResp;
-	
-	//User validation
-	while (userResp < 1 || userResp > 4){
-		cout << "Please choose a number between 1-4" << endl;
-		cin >> userResp;
-	}
-
-	system("CLS");
-
-	//Calls to user functions
-	if (userResp == 1)
-	{
-		User::updateUser(lineNo, UserInfo.userName);
-	}
-	else if (userResp == 2)
-	{
-		User::deleteUser(lineNo, UserInfo.userName);
-	}
-	else if (userResp == 3)
-	{		
+	do{
 		//User class functions
-		cout << "\n\tHigh Score Manager" << endl;
-		cout << "\n\t1. Create high score" << endl;
-		cout << "\n\t2. Print high score" << endl;
+		cout << endl;
+		cout << "\n\tUser information Section" << endl;
+		cout << "\n\t1. Update/edit user" << endl;
+		cout << "\n\t2. Delete user" << endl;
+		cout << "\n\t3. High Score Manager" << endl;
+		cout << "\n\t4. Exit Program" << endl;
 		cin >> userResp;
 
+		//User validation
+		while (userResp < 1 || userResp > 4){
+			cout << "Please choose a number between 1-4" << endl;
+			cin >> userResp;
+		}
+
+		system("CLS");
+
+		//Calls to user functions
 		if (userResp == 1)
 		{
-				HighScoreManager HighScore;
-					HighScore.createHighScore(UserInfo.userName);
+			User::updateUser(lineNo, UserInfo.userName);
 		}
 		else if (userResp == 2)
 		{
-			HighScoreManager HighScore;
-				HighScore.printHighScore();
+			//Checks if user actually deleted user
+			if (User::deleteUser(lineNo, UserInfo.userName)){
+				//Ensures the user doesn't return to the user window
+				userResp = 4;
+			}
 		}
-	}
+		else if (userResp == 3)
+		{
+			do{
+				system("CLS");
+				//User class functions
+				cout << "\n\tHigh Score Manager" << endl;
+				cout << "\n\t1. Create high score" << endl;
+				cout << "\n\t2. Print high score" << endl;
+				cout << "\n\t3. Exit to previous menu" << endl;
+				cin >> userResp;
+
+				//User validation
+				while (userResp < 1 || userResp > 3){
+					cout << "Please choose a number between 1-3" << endl;
+					cin >> userResp;
+				}
+
+				if (userResp == 1)
+				{
+					HighScoreManager HighScore;
+					HighScore.createHighScore(UserInfo.userName);
+				}
+				else if (userResp == 2)
+				{
+					HighScoreManager HighScore;
+					HighScore.printHighScore();
+				}
+			} while (userResp != 3);
+		}
+	} while (userResp != 4);
 }
 void User::checkIfUserExists(int lineNo, std::string UserName)
 {
@@ -119,11 +132,11 @@ void User::checkIfUserExists(int lineNo, std::string UserName)
 		{
 			cout << "\n\tWelcome new user, your username has been entered into our database." << endl;
 			cout << "\n\tPlease enter your profile information" << endl;
-			cout << "\n\tCountry:";
+			cout << "\n\tCountry: ";
 			cin >> newCountryStr;
-			cout << "\n\tGender:";
+			cout << "\n\tGender: ";
 			cin >> newGenderStr;
-			cout << "\n\tAge:";
+			cout << "\n\tAge: ";
 			cin >> newAgeInt;
 
 			outfile.open("users.txt", ios_base::app);
@@ -163,11 +176,11 @@ void User::updateUser(int lineNo, std::string UserName)
 	}
 
 	cout << "Welcome, " << UserName << ", update your profile:" << endl;
-	cout << "Country:" << endl;
+	cout << "Country: ";
 	cin >> updateCountryStr;
-	cout << "Gender:" << endl;
+	cout << "Gender: ";
 	cin >> updateGenderStr;
-	cout << "Age:" << endl;
+	cout << "Age: ";
 	cin >> updatedAgeInt;
 
 	for (int i = 0; i < lineNo; i++)
@@ -180,7 +193,7 @@ void User::updateUser(int lineNo, std::string UserName)
 
 			outfile.open("users.txt");
 
-			for (int i = 0; i < lineNo + 1; i++)
+			for (int i = 0; i < lineNo; i++)
 			{
 				outfile << profileArray[i].userName << ":" << profileArray[i].country << "," << profileArray[i].gender << "," << profileArray[i].age << endl;
 			}
@@ -188,7 +201,7 @@ void User::updateUser(int lineNo, std::string UserName)
 		}
 	}
 }
-void User::deleteUser(int lineNo, std::string UserName)
+bool User::deleteUser(int lineNo, std::string UserName)
 {
 	ofstream outfile;
 	ifstream infile;
@@ -196,9 +209,15 @@ void User::deleteUser(int lineNo, std::string UserName)
 	int updatedAgeInt, i = 0, j=0;
 	string userDelete;
 
-	cout << "Are you sure you want to delete your profile?" << endl;
+	cout << "Are you sure you want to delete your profile? (yes/no)" << endl;
 	cin >> userDelete;
 
+	while (userDelete != "Yes" && userDelete != "yes" && userDelete != "no" && userDelete != "No"){
+		cout << "Please either type Yes or No" << endl;
+		cin >> userDelete;
+	};
+
+	
 	if (userDelete == "Yes" || userDelete == "yes")
 	{
 
@@ -250,8 +269,12 @@ void User::deleteUser(int lineNo, std::string UserName)
 
 			}
 		}
+		//Indicates that the user was deleted
+		return true;
 	}
 	else
 	{
+		return false;
 	}
+	 
 }
