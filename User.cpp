@@ -69,7 +69,11 @@ void User::login()
 		}
 		else if (userResp == 2)
 		{
-			User::deleteUser(lineNo, UserInfo.userName);
+			//Checks if user actually deleted user
+			if (User::deleteUser(lineNo, UserInfo.userName)){
+				//Ensures the user doesn't return to the user window
+				userResp = 4;
+			}
 		}
 		else if (userResp == 3)
 		{
@@ -189,7 +193,7 @@ void User::updateUser(int lineNo, std::string UserName)
 
 			outfile.open("users.txt");
 
-			for (int i = 0; i < lineNo + 1; i++)
+			for (int i = 0; i < lineNo; i++)
 			{
 				outfile << profileArray[i].userName << ":" << profileArray[i].country << "," << profileArray[i].gender << "," << profileArray[i].age << endl;
 			}
@@ -197,7 +201,7 @@ void User::updateUser(int lineNo, std::string UserName)
 		}
 	}
 }
-void User::deleteUser(int lineNo, std::string UserName)
+bool User::deleteUser(int lineNo, std::string UserName)
 {
 	ofstream outfile;
 	ifstream infile;
@@ -265,8 +269,12 @@ void User::deleteUser(int lineNo, std::string UserName)
 
 			}
 		}
+		//Indicates that the user was deleted
+		return true;
 	}
 	else
 	{
+		return false;
 	}
+	 
 }

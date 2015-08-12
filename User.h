@@ -16,7 +16,7 @@ public:
 
 	void checkIfUserExists(int, std::string);
 	void updateUser(int, std::string);
-	void deleteUser(int, std::string);
+	bool deleteUser(int, std::string);
 	void login();
 
 
