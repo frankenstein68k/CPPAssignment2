@@ -5,10 +5,7 @@
 using namespace std;
 
 User::User(){};
-User::~User(){
-
-
-};
+User::~User(){};
 User::UserInfo::UserInfo(){};
 
 //Constructor
@@ -18,7 +15,6 @@ User::UserInfo::UserInfo(const std::string userNamex, const std::string countryx
 	UserInfo::country = countryx;
 	UserInfo::gender = genderx;
 	UserInfo::age = agex;
-
 };
 
 void User::login()
@@ -119,11 +115,11 @@ void User::checkIfUserExists(int lineNo, std::string UserName)
 		{
 			cout << "\n\tWelcome new user, your username has been entered into our database." << endl;
 			cout << "\n\tPlease enter your profile information" << endl;
-			cout << "\n\tCountry:";
+			cout << "\n\tCountry: ";
 			cin >> newCountryStr;
-			cout << "\n\tGender:";
+			cout << "\n\tGender: ";
 			cin >> newGenderStr;
-			cout << "\n\tAge:";
+			cout << "\n\tAge: ";
 			cin >> newAgeInt;
 
 			outfile.open("users.txt", ios_base::app);
@@ -163,11 +159,11 @@ void User::updateUser(int lineNo, std::string UserName)
 	}
 
 	cout << "Welcome, " << UserName << ", update your profile:" << endl;
-	cout << "Country:" << endl;
+	cout << "Country: ";
 	cin >> updateCountryStr;
-	cout << "Gender:" << endl;
+	cout << "Gender: ";
 	cin >> updateGenderStr;
-	cout << "Age:" << endl;
+	cout << "Age: ";
 	cin >> updatedAgeInt;
 
 	for (int i = 0; i < lineNo; i++)
@@ -196,7 +192,7 @@ void User::deleteUser(int lineNo, std::string UserName)
 	int updatedAgeInt, i = 0, j=0;
 	string userDelete;
 
-	cout << "Are you sure you want to delete your profile?" << endl;
+	cout << "Are you sure you want to delete your profile? (yes/no)" << endl;
 	cin >> userDelete;
 
 	if (userDelete == "Yes" || userDelete == "yes")
