@@ -194,61 +194,64 @@ void User::deleteUser(int lineNo, std::string UserName)
 	ifstream infile;
 	UserInfo profileArray[1000];
 	int updatedAgeInt, i = 0, j=0;
+	string userDelete;
 
-	infile.open("users.txt");
+	cout << "Are you sure you want to delete your profile?" << endl;
+	cin >> userDelete;
 
-	while (!infile.eof())
+	if (userDelete == "Yes" || userDelete == "yes")
 	{
-		//get username from .dat file	
-		getline(infile, profileArray[i].userName, ':');
-		getline(infile, profileArray[i].country, ',');
-		getline(infile, profileArray[i].gender, ',');
-		infile >> profileArray[i].age;
-		infile.ignore(256, '\n');
-		i++;
-	}
 
-	infile.close();
+		infile.open("users.txt");
 
-
-	for (int i = 0; i < lineNo; i++)
-	{
-		if (profileArray[i].userName == UserName)
+		while (!infile.eof())
 		{
-			UserInfo tempArray[1000];
-			int temp1;
-
-			infile.open("users.txt");
-
-			while (!infile.eof())
-			{
-				//get username from .dat file	
-				getline(infile, tempArray[j].userName, ':');
-				getline(infile, tempArray[j].country, ',');
-				getline(infile, tempArray[j].gender, ',');
-				infile >> tempArray[j].age;
-				infile.ignore(256, '\n');
-				j++;
-			}
-
-			tempArray[lineNo] = profileArray[i];
-			tempArray[i] = profileArray[lineNo-1];
-
-			for (int i = 0; i < lineNo; i++)
-			{
-				cout << "Temp Array";
-				cout << tempArray[i].userName << ":" << tempArray[i].country << "," << tempArray[i].gender << "," << tempArray[i].age << endl;
-				cout << "Real Array";
-				cout << profileArray[i].userName << ":" << profileArray[i].country << "," << profileArray[i].gender << "," << profileArray[i].age << endl;
-			}
-
-			outfile.open("users.txt");
-
-			for (int i = 0; i < lineNo - 1; i++)
-			{
-				outfile << tempArray[i].userName << ":" << tempArray[i].country << "," << tempArray[i].gender << "," << tempArray[i].age << endl;
-			}
-
+			//get username from .dat file	
+			getline(infile, profileArray[i].userName, ':');
+			getline(infile, profileArray[i].country, ',');
+			getline(infile, profileArray[i].gender, ',');
+			infile >> profileArray[i].age;
+			infile.ignore(256, '\n');
+			i++;
 		}
+
+		infile.close();
+
+
+		for (int i = 0; i < lineNo; i++)
+		{
+			if (profileArray[i].userName == UserName)
+			{
+				UserInfo tempArray[1000];
+				int temp1;
+
+				infile.open("users.txt");
+
+				while (!infile.eof())
+				{
+					//get username from .dat file	
+					getline(infile, tempArray[j].userName, ':');
+					getline(infile, tempArray[j].country, ',');
+					getline(infile, tempArray[j].gender, ',');
+					infile >> tempArray[j].age;
+					infile.ignore(256, '\n');
+					j++;
+				}
+
+				tempArray[lineNo] = profileArray[i];
+				tempArray[i] = profileArray[lineNo - 1];
+
+				outfile.open("users.txt");
+
+				for (int i = 0; i < lineNo - 1; i++)
+				{
+					outfile << tempArray[i].userName << ":" << tempArray[i].country << "," << tempArray[i].gender << "," << tempArray[i].age << endl;
+				}
+
+			}
+		}
+	}
+	else
+	{
 	}
 }
